@@ -1,0 +1,230 @@
+/* Keyframes Animation for the logo */
+@keyframes logoAnimation {
+  /* Starting with a small width and fully transparent */
+  from {
+    width: 25px; 
+    opacity: 0;
+  }
+  /* Expanding to full width and fading in to fully opaque */
+  to {
+    width: 475px;
+    opacity: 1;
+  }
+}
+/* 5 second logo animation, applying the above styling */
+#logo{
+  animation: logoAnimation 5s forwards;
+}
+
+/* Styling the body */
+body {
+    /* Setting Poppins as the primary font and sans-serif as the backup font*/
+    font-family: "Poppins", sans-serif;
+    /* Setting concrete_seamless.png as the background image */
+    background-image: url("/images/concrete_seamless.png");
+    /* Setting the background color to #f1f1f1 */
+    background-color: #f1f1f1;
+  }
+
+/* Styling the header */
+header {
+  /* Using flexbox layout for the header */
+  display: flex;
+  /* Arranging the items in a column */
+  flex-direction: column;
+  /* Centering the items horizontally */
+  align-items: center;
+}
+
+/*  Styling the navigation links */
+.nav_links {
+  /* Using flexbox for the nav links */
+  display: flex;
+  /* Stacking the lines horizontally */
+  flex-direction: column;
+}
+
+/* Setting the links to #0000EE even after they have been visited */
+.nav_links a {
+color:#0000EE;
+}
+
+ 
+/* Styling the header in card */
+.card > header {
+  /* Setting background color for the headers in cards */
+  background-color: #288088;
+  /* Adding a solid, 2px border */
+  border: solid 2px #45ADAD;
+  /* Adding padding to the top and bottom */
+  padding-top: 20px;
+  padding-bottom: 20px;
+  /* Setting a 50px border radius to round the top left and top right corners */
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+}
+
+
+/* Card Layout*/
+.card {
+  /* Initializing flexbox */
+  display: flex;
+  /* Use flex-direction column to make the cards vertically stacked*/
+  flex-direction: column;
+  /* Setting a 50px border radius to round the top left and top right corners */
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  /* Using flex-basis to set the initial width of 450px for flex items */
+  flex-basis: 450px;
+}
+
+/* Pricing section styling */
+.pricing {
+  /* Enabling flexbox for the pricing class */
+  display: flex;
+  /* Using flex-direction to stack the pricing cards vertically */
+  flex-direction: column;
+  /* Using justify content to center the pricing cards vertically */
+  justify-content: center;
+  /* Using align-items to center pricing cards horizontally */
+  align-items: center;
+} 
+
+/* Styling the Gallery Images */
+.gallery > img {
+  /* Setting a solid, 10px, #50C7C7 border */
+  border: solid 10px #50C7C7;
+  /* Adding 10px of margin space around the images */
+  margin: 10px;
+  /* Setting a fixed width of 300px for consistency */
+  width: 300px;
+}
+
+/* Styling the gallery layout */
+.gallery {
+  /* Enabling flexbox */
+  display: flex;
+  /* Allowing items to wrap as needed */
+  flex-wrap: wrap;
+  /* Using justify-content to center the images in the gallery */
+  justify-content: center;
+}
+
+/* Setting a breakpoint for screen-sizes greater than 900px */
+@media screen and (min-width: 900px) {
+  /* Styling the header within the media query */
+  header {
+    /* Initializing flexbox for the header */
+    display: flex;
+    /* Aligning header items in the row */
+    flex-direction: row;
+    /* Using align-items to center the header */
+    align-items: center;
+    /* Putting space between the logo and nav links */
+    justify-content: space-between;
+
+  }
+  /* Styling the nav links within the media query */
+  .nav_links {
+    /* Initializing flexbox */
+    display: flex;
+    /* Aligning nav links in a row */
+    flex-direction: row;
+    /* Aligning links to the end of the box (right side) */
+    justify-content: flex-end;
+    align-items: center;
+    /* Making the nav links span the whole width */
+    width: 100%;
+  }
+
+  /* Making the pricing and card classes to match the provided example */
+  .pricing {
+    display: flex;
+    flex-direction: row;
+  }
+  /* Setting the card to have a size of 275px */
+  .card {
+    display: flex;
+    flex-basis: 275px;
+  }
+
+  /* Setting the header to be visible at the top of the screen at all times while scrolling*/
+  body > header:first-of-type {
+    position: fixed;
+    width: 100%;
+    
+  } 
+  /* Adding a padding to the main content so it does not overlap with the fixed heading */
+  main {
+    padding-top: 75px;
+  }
+}
+
+/* Setting a media query for users who prefer reduced motion */
+@media screen and (prefers-reduced-motion: reduce){
+  /* 14. The logo should appear but not be animated if prefers-reduced-motion is selected in the accessibility preferences. 
+ */
+  #logo{
+      animation: none;
+      width: 475px;
+      opacity: 1;
+  }
+}
+
+
+/* Setting a media query for when the page is in portrait mode (print mode) */
+@media print and (orientation: portrait) {
+  body {
+    /* Setting the body font to arial with helvetica as a backup */
+    font-family: Arial, Helvetica;
+    /* Removing the background image (concrete_seamless.png) */
+    background-image: none;
+  }
+    /* Making nav items and links horizontal and evenly spaced */
+    .nav_item {
+      align-items: space-between;
+      margin-right: 80px;
+      margin-left: 80px;
+    }
+    .nav_links {
+      display: flex;
+      flex-direction: row;
+    }
+
+    /* Aligning items in the pricing class along the bottom of the screen */
+    .pricing {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+    }
+
+    /* Making the elements of the card clas contain a solid, 2px, #45ADDD border and a flex-basis of 325px */
+    .card {
+      border: solid 2px #45ADDD;
+      flex-basis: 325px;
+    }
+
+    /* Removing the gallery from the portrait view media query */
+    .gallery, #gallery {
+      display: none;
+    }
+
+    /* Putting a thumbs up emoji after the 2nd item in each card class list */
+    .card li:nth-child(2)::after {
+      content: "\1F44D"
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
