@@ -182,7 +182,7 @@ color:#0000EE;
   }
     /* Making nav items and links horizontal and evenly spaced */
     .nav_item {
-      align-items: space-between;
+      justify-content: space-between;
       margin-right: 80px;
       margin-left: 80px;
     }
