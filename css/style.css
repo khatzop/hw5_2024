@@ -21,7 +21,7 @@ body {
     /* Setting Poppins as the primary font and sans-serif as the backup font*/
     font-family: "Poppins", sans-serif;
     /* Setting concrete_seamless.png as the background image */
-    background-image: url("/images/concrete_seamless.png");
+    background-image: url("../images/concrete_seamless.png");
     /* Setting the background color to #f1f1f1 */
     background-color: #f1f1f1;
   }
